@@ -13,7 +13,7 @@
         // NCMB アクセスの準備
         let ncmb = new NCMB(appKey, clientKey);
         // 本アプリで使うクラスの指定。const は定数の宣言。変更できない変数と思えば良い。
-        const db = "SearchTest";
+        const db = "SearchTest_4";
         // テスト用データを用意
         const init_data = [
             {name: "blue eyes white dragon", level: 8, attack: 3000, defence: 2500},
@@ -21,6 +21,10 @@
             {name: "jacks knight", level: 5, attack: 1900, defence: 1000},
             {name: "queens knight", level: 4, attack: 1500, defence: 1600},
             {name: "kings knight", level: 4, attack: 1600, defence: 1400},
+            {name: "Yubel", level: 10, attack: 0, defence: 0},
+            {name: "Junk Warrior", level: 5, attack: 2300, defence: 1300},
+            {name: "Junk Synchron", level: 3, attack: 1300, defence: 500},
+            {name: "Doppelwarrior", level: 2, attack: 800, defence: 800},
         ];
 
         $(function () {
@@ -38,7 +42,7 @@
                                 .save();
                             // bad busy loop...
                             let startMsec = new Date();
-                            while (new Date() - startMsec < 1000) ;
+                            while (new Date() - startMsec < 3000) ;
                         }
                         $("#message").html("Test DB initialized.");
                     } else {
